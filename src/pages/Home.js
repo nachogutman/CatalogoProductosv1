@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 
 function Home(props) {
   return (
@@ -45,7 +46,7 @@ function Home(props) {
         <h2 className="title">Featured Products</h2>
         <div className="row">
           <div className="col-4">
-            <a href="#"><img src="/images/product-1.jpg"></img></a>
+          <Link to="/product_details"><img src="/images/product-1.jpg"></img></Link>
             <h4>Red Printed T-Shirt</h4>
             <div className="rating">
               <i className="fa fa-star"></i>

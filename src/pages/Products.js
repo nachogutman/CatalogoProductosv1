@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 
 function Products(props) {
     return (
@@ -17,7 +18,7 @@ function Products(props) {
                 </div>
                 <div className="row">
                     <div className="col-4">
-                        <a href="product_details.html"><img src="images/product-1.jpg"></img></a>
+                        <Link to="/product_details"><img src="images/product-1.jpg"></img></Link>
                         <h4>Red Printed T-Shirt</h4>
                         <div className="rating">
                             <i className="fa fa-star"></i>
@@ -30,27 +31,27 @@ function Products(props) {
                     </div>
                     <div className="col-4">
                         <img src="images/product-2.jpg"></img>
-                            <h4>Red Printed T-Shirt</h4>
-                            <div className="rating">
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star-o"></i>
-                            </div>
-                            <p>$50.00</p>
+                        <h4>Red Printed T-Shirt</h4>
+                        <div className="rating">
+                            <i className="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
+                            <i className="fa fa-star-o"></i>
+                        </div>
+                        <p>$50.00</p>
                     </div>
                     <div className="col-4">
                         <img src="images/product-3.jpg"></img>
-                            <h4>Red Printed T-Shirt</h4>
-                            <div className="rating">
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star-o"></i>
-                            </div>
-                            <p>$50.00</p>
+                        <h4>Red Printed T-Shirt</h4>
+                        <div className="rating">
+                            <i className="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
+                            <i className="fa fa-star"></i>
+                            <i className="fa fa-star-o"></i>
+                        </div>
+                        <p>$50.00</p>
                     </div>
                     <div className="col-4">
                         <img src="images/product-4.jpg"></img>
