@@ -1,33 +1,33 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { createContext } from 'react';
 
-export const UserContext = React.createContext();
+export const UserContext = createContext();
 
-export const ListaProvider = ({ children }) => {
+export const ListaProvider = ( props ) => {
     const [lista, setLista] = useState([]);
 
     useEffect(() => {
         axios.get("https://dummyjson.com/products/")
             .then((response) => {
-                console.log(response)
+                
                 setLista(response.data.products);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
-
     if(lista != undefined){
         return (
-            <UserContext.Provider value={lista}>
-                {children}
+            <UserContext.Provider value={{lista}}>
+                {props.children}
             </UserContext.Provider>
         );
     }else{
         return (
             <UserContext.Provider value={'api janeada'}>
-                {children}
+                {props.children}
             </UserContext.Provider>
         );
     }

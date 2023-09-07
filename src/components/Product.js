@@ -1,17 +1,14 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import UserContext from '../context/userContext.js'
-import { useContext } from 'react';
-import ListaProvider from '../context/userContext.js';
 
-function Product() {
-    const { lista } = useContext(UserContext);
-    console.log(lista)
+
+export default function Product({id, title, price, image1, rating}) {
+    const link = "/product_details/" + id;
     return (
         <>
             <div className="col-4">
-                <Link to="/product_details"><img src="images/product-1.jpg"></img></Link>
-                <h4>Red TShirt</h4>
+                <Link to={link}><img src={image1}></img></Link>
+                <h4>{title}</h4>
                 <div className="rating">
                     <i className="fa fa-star"></i>
                     <i className="fa fa-star"></i>
@@ -19,12 +16,10 @@ function Product() {
                     <i className="fa fa-star"></i>
                     <i className="fa fa-star-o"></i>
                 </div>
-                <p>$50.00</p>
+                <p>${price}</p>
             </div>
 
             
         </>
     )
 }
-
-export default ListaProvider(Product);
