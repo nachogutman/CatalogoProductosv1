@@ -1,4 +1,4 @@
-Usando un template de html5 y adaptandolo a react router.
+Usando un template de html5 y adaptandolo a react router. Dandole funcionalidad con una api y react context
 
 
 # Getting Started with Create React App
