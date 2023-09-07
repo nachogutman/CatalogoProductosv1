@@ -8,24 +8,27 @@ import Layout from './pages/Layout';
 import Products from './pages/Products';
 import Product_Details from './pages/Product_Details';
 import Contacto from './pages/Contacto';
-import ListaProvider from './context/userContext';
+import ListaProvider from './context/ProductsContext';
+import CategoriesProvider from './context/CategoriesContext';
+
 
 function App() {
 
   return (
-
-    <ListaProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />}></Route>
-            <Route path='/products' element={<Products />}></Route>
-            <Route path='/product_details/:id' element={<Product_Details />}></Route>
-            <Route path='/contacto' element={<Contacto />}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </ListaProvider>
+    <CategoriesProvider>
+      <ListaProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />}></Route>
+              <Route path='/products' element={<Products />}></Route>
+              <Route path='/product_details/:id' element={<Product_Details />}></Route>
+              <Route path='/contacto' element={<Contacto />}></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </ListaProvider>
+    </CategoriesProvider>
 
   );
 }

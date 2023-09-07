@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { createContext } from 'react';
 
-export const UserContext = createContext();
+export const ProductsContext = createContext();
 
 export const ListaProvider = ( props ) => {
     const [lista, setLista] = useState([]);
@@ -20,15 +20,15 @@ export const ListaProvider = ( props ) => {
     }, []);
     if(lista != undefined){
         return (
-            <UserContext.Provider value={{lista}}>
+            <ProductsContext.Provider value={{lista}}>
                 {props.children}
-            </UserContext.Provider>
+            </ProductsContext.Provider>
         );
     }else{
         return (
-            <UserContext.Provider value={'api janeada'}>
+            <ProductsContext.Provider value={'api janeada'}>
                 {props.children}
-            </UserContext.Provider>
+            </ProductsContext.Provider>
         );
     }
     

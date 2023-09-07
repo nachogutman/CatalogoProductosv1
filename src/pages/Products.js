@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from "react-router-dom";
 import Product from '../components/Product.js'
-import { UserContext } from '../context/userContext.js'
+import { ProductsContext } from '../context/ProductsContext.js'
 import { useContext } from 'react';
-import ListaProvider from '../context/userContext.js';
+import { CategoriesContext } from '../context/CategoriesContext.js';
 
 function Products(props) {
-    const { lista } = useContext(UserContext);
+    const { lista } = useContext(ProductsContext);
+    const { categories } = useContext(CategoriesContext);
 
     return (
         <>
@@ -16,17 +15,16 @@ function Products(props) {
                     <h2>All Products</h2>
                     <select>
                         <option>Default Sort</option>
-                        <option>Sort By Price</option>
-                        <option>Sort By Popularity</option>
-                        <option>Sort By Rating</option>
-                        <option>Sort By Sale</option>
+                        {categories.map(category => (
+                            <option>{category}</option>
+                        ))}
                     </select>
                 </div>
                 <div className="row">
                     {lista.map(product => (
                         <Product rating={product.rating} image1={product.images[0]} price={product.price} title={product.title} id={product.id}></Product>
                     ))}
-                    
+
                 </div>
                 <div className="page-btn">
                     <span>1</span>

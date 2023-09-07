@@ -1,12 +1,12 @@
 import React from 'react'
-import { UserContext } from '../context/userContext.js'
+import { ProductsContext } from '../context/ProductsContext.js'
 import { useContext } from 'react';
-import ListaProvider from '../context/userContext.js';
+import ListaProvider from '../context/ProductsContext.js';
 import { useParams } from "react-router-dom";
 
 
 export default function Product_Details() {
-    const { lista } = useContext(UserContext);
+    const { lista } = useContext(ProductsContext);
     const { id } = useParams();
     const obj = lista[id];
     console.log(obj)
