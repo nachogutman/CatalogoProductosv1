@@ -3,7 +3,7 @@ import { ProductsContext } from '../context/ProductsContext.js'
 import { useContext } from 'react';
 import ListaProvider from '../context/ProductsContext.js';
 import { useParams } from "react-router-dom";
-
+import BuyButton from '../components/BuyButton.js';
 
 export default function Product_Details() {
     const { lista } = useContext(ProductsContext);
@@ -39,7 +39,7 @@ export default function Product_Details() {
                         <h1>{obj.title}</h1>
                         <h4>${obj.price}</h4>
                         <input type="number" value="1"></input>
-                        <a href="" class="btn">Add To Cart</a>
+                        <BuyButton id={id}></BuyButton>
 
                         <h3>Product Details <i class="fa fa-indent"></i></h3>
                         <br></br>
