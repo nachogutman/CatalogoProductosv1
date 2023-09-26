@@ -5,11 +5,10 @@ import ListaProvider from '../context/ProductsContext.js';
 import { useParams } from "react-router-dom";
 import BuyButton from '../components/BuyButton.js';
 
-export default function Product_Details() {
+export default function ProductDetails() {
     const { lista } = useContext(ProductsContext);
     const { id } = useParams();
     const obj = lista[id];
-    console.log(obj)
 
     return (
         <>

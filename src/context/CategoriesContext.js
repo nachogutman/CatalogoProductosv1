@@ -18,7 +18,6 @@ export const CategoriesProvider = ( props ) => {
             });
     }, []);
 
-    console.log(categories)
     if(categories != undefined){
         return (
             <CategoriesContext.Provider value={{categories}}>
