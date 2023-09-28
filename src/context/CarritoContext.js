@@ -5,17 +5,19 @@ import { ProductsContext } from '../context/ProductsContext';
 
 export const CarritoContext = createContext();
 
-export const CarritoProvider = ( props ) => {
-    const { lista } = useContext(ProductsContext);
-    const obj = lista[0];
-    console.log(obj)
+export const CarritoProvider = (props) => {
     const [cartList, setCartList] = useState([]);
 
-    setCartList([...cartList, obj]);
+    function addToCart(product){
+        setCartList([...cartList, product])
+    }
 
-    <CarritoContext.Provider value={{cartList}}>
-        {props.children}
-    </CarritoContext.Provider>
+    return (
+        <CarritoContext.Provider value={{ cartList, addToCart }}>
+            {props.children}
+        </CarritoContext.Provider>
+    )
 }
+
 
 export default CarritoProvider;

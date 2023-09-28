@@ -11,12 +11,13 @@ import Contacto from "./pages/Contacto";
 import ListaProvider from "./context/ProductsContext";
 import CategoriesProvider from "./context/CategoriesContext";
 import CarritoProvider from "./context/CarritoContext";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
     <CategoriesProvider>
       <ListaProvider>
-        
+        <CarritoProvider>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Layout />}>
@@ -27,10 +28,11 @@ function App() {
                   element={<ProductDetails />}
                 ></Route>
                 <Route path="/contacto" element={<Contacto />}></Route>
+                <Route path="/cart" element={<Cart />}></Route>
               </Route>
             </Routes>
           </BrowserRouter>
-        
+        </CarritoProvider>
       </ListaProvider>
     </CategoriesProvider>
   );

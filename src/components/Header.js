@@ -17,7 +17,7 @@ function Header(props) {
                             <li><Link to="/contacto">Contacto</Link></li>
                         </ul>
                     </nav>
-                    <a href="#"><img src="/images/cart.png" width="30px" height="30px"></img></a>
+                    <Link to="/Cart"><img src="/images/cart.png" width="30px" height="30px"></img></Link>
                     <img src="/images/menu.png" className="menu-icon" onClick="menutoggle()"></img>
                 </div>
             </div>

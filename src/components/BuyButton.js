@@ -6,13 +6,15 @@ import { ProductsContext } from '../context/ProductsContext';
 
 export default function BuyButton({id}) {
     const { lista } = useContext(ProductsContext);
+    const { cartList, addToCart } = useContext(CarritoContext);
     const obj = lista[id];
-    function addToCart(){
-    }
 
+    function add(){
+        addToCart(obj)
+    }
     return (
         <>
-            <a href="" class="btn" onClick={() => addToCart()}>Add To Cart</a>
+            <button class="btn" onClick={() => add()}>Add To Cart</button>
         </>
     )
 }

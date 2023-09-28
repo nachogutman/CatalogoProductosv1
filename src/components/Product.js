@@ -7,7 +7,7 @@ export default function Product({id, title, price, image1, rating}) {
     return (
         <>
             <div className="col-4">
-                <Link to={link}><img src={image1}></img></Link>
+                <Link to={link}><img src={image1} alt='error img'></img></Link>
                 <h4>{title}</h4>
                 <div className="rating">
                     <i className="fa fa-star"></i>
