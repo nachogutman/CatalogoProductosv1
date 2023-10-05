@@ -1,7 +1,6 @@
 import React from 'react'
 import { ProductsContext } from '../context/ProductsContext.js'
 import { useContext } from 'react';
-import ListaProvider from '../context/ProductsContext.js';
 import { useParams } from "react-router-dom";
 import BuyButton from '../components/BuyButton.js';
 

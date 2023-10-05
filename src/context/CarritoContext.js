@@ -8,12 +8,20 @@ export const CarritoContext = createContext();
 export const CarritoProvider = (props) => {
     const [cartList, setCartList] = useState([]);
 
-    function addToCart(product){
+    function addToCart(product) {
         setCartList([...cartList, product])
+        localStorage.setItem('cartList', JSON.stringify([...cartList, product]))
+    }
+
+    function deleteFromCart(index) {
+        const temp = [...cartList];
+        temp.splice(index, 1);
+        setCartList(temp);
+        localStorage.setItem('cartList', JSON.stringify(temp))
     }
 
     return (
-        <CarritoContext.Provider value={{ cartList, addToCart }}>
+        <CarritoContext.Provider value={{ cartList, addToCart, deleteFromCart }}>
             {props.children}
         </CarritoContext.Provider>
     )

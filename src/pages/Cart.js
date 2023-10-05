@@ -8,7 +8,7 @@ import { CategoriesContext } from '../context/CategoriesContext.js';
 import { useState } from 'react';
 
 function Cart(props) {
-    const { cartList, addToCart } = useContext(CarritoContext);
+    const { cartList, addToCart, deleteFromCart } = useContext(CarritoContext);
 
     return (
         <>
@@ -16,7 +16,7 @@ function Cart(props) {
                 <div className="row row-2">
                     <h2>Cart</h2>
                 </div>
-                {cartList.map(product => (
+                {cartList.map((product, index)  => (
                     /*
                     (product.category == categorySelected || categorySelected == 'Default Sort') &&
                     <Product rating={product.rating} image1={product.images[0]} price={product.price} title={product.title} id={product.id-1}></Product>*/
@@ -36,7 +36,7 @@ function Cart(props) {
                         backgroundColor: 'red',
                         borderRadius: '25%',
                         margin: '1%',
-                    }}> X </button>
+                    }} onClick={() => deleteFromCart(index)}> X </button>
                 </div>
             </div>
                 ))}

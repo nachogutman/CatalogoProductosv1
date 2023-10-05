@@ -28,7 +28,7 @@ function Products(props) {
                 <div className="row">
                     {lista.map(product => (
                         
-                        (product.category == categorySelected || categorySelected == 'Default Sort') &&
+                        (product.category === categorySelected || categorySelected === 'Default Sort') &&
                         <Product rating={product.rating} image1={product.images[0]} price={product.price} title={product.title} id={product.id-1}></Product>
                     ))}
 
